@@ -1,0 +1,24 @@
+{
+  "name": "Dealers-N-Deals-MarketPlace",
+  "version": "1.0.0",
+  "description": "MERN ecommerce and rating app",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --experimental-modules backend/server.js",
+    "server": "nodemon --experimental-modules backend/server.js"
+  },
+  "author": "Daniel Kamar",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
