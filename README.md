@@ -1,14 +1,34 @@
 # Dealers-N-Deals-MarketPlace
 Listing of Products, Prices for competitive business (with automatic badge awards). 
 
-### Technologies: 
-on backend branch
-{ React-Hooks + Strapi-JS/HeadlessCMS }
+> eCommerce platform built with the MERN stack & React-Hooks with Redux.
 
-on full-stack branch 
-{ React-Hooks with Redux + NodeJs }
 
-## ES Modules in Node
+![screenshot](https://github.com/koitoror/Dealers-N-Deals-MarketPlace/blob/full-stack/frontend/uploads/DnD.png)
+
+## Features
+
+- Full featured shopping cart
+- Product reviews and ratings
+- Top products carousel
+- Product pagination
+- Product search feature
+- User profile with orders
+- Admin product management
+- Admin user management
+- Admin Order details page
+- Mark orders as delivered option
+- Checkout process (shipping, payment method, etc)
+- PayPal / credit card integration
+- Database seeder (products & users)
+
+## Note on Issues
+
+Please, If you clone THIS repo and there are issues, then you can submit
+
+## Usage
+
+### ES Modules in Node
 
 We us ECMAScript Modules in the backend in this project. Be sure to have at least Node v14.6+ or you will need to add the "--experimental-modules" flag.
 
@@ -23,18 +43,60 @@ Create a .env file in then root and add the following
 ```
 NODE_ENV = development
 PORT = 5000
-
+MONGO_URI = your mongodb uri
+JWT_SECRET = 'abc123'
+PAYPAL_CLIENT_ID = your paypal client id
 ```
 
 ### Install Dependencies (frontend & backend)
 
 ```
 npm install
+cd frontend
+npm install
 ```
 
 ### Run
 
 ```
-# Run backend 
+# Run frontend (:3000) & backend (:5000)
+npm run dev
+
+# Run backend only
 npm run server
+```
+
+## Build & Deploy
+
+```
+# Create frontend prod build
+cd frontend
+npm run build
+```
+
+There is a Heroku postbuild script, so if you push to Heroku, no need to build manually for deployment to Heroku
+
+### Seed Database
+
+You can use the following commands to seed the database with some sample users and products as well as destroy all data
+
+```
+# Import data
+npm run data:import
+
+# Destroy data
+npm run data:destroy
+```
+
+```
+Sample User Logins
+
+admin@example.com (Admin)
+123456
+
+john@example.com (Customer)
+123456
+
+jane@example.com (Customer)
+123456
 ```
