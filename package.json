@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "start": "node --experimental-modules backend/server.js",
-    "server": "nodemon --experimental-modules backend/server.js"
+    "server": "nodemon --experimental-modules backend/server.js",
+    "data:import": "node --experimental-modules backend/seeder.js",
+    "data:destroy": "node --experimental-modules backend/seeder.js -d"
   },
   "author": "Daniel Kamar",
   "license": "MIT",
