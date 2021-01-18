@@ -11,7 +11,9 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node --experimental-modules backend/seeder.js",
     "data:destroy": "node --experimental-modules backend/seeder.js -d",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
+    "install": "cd frontend && npm install && npm run build && cd .."
+
   },
   "author": "Daniel Kamar",
   "license": "MIT",
