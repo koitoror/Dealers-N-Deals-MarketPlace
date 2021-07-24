@@ -1,0 +1,54 @@
+version: "3"
+services:
+  nginx:
+    ports:
+      - '8080:80'
+      # - "3000:80"
+
+  frontend-react-app:
+    build:
+      context: ./frontend/
+      # context: .
+      args:
+        NODE_ENV: development
+    #   ports:
+    #     - 5000:5000
+    # volumes:
+    #   - ./frontend/:/app
+    #   - /frontend/node_modules:/app/node_modules
+      # - ./:/app
+      # - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      # - MONGO_USER=koitoror
+      # - MONGO_PASSWORD=mypassword
+      # - SESSION_SECRET=secret
+    # entrypoint: ['npm', 'run', 'start']
+    command: npm run start
+
+  backend-node-app:
+    # build:
+    #   # context: .
+    #   args:
+    #     NODE_ENV: development
+    #   ports:
+    #     - 5000:5000
+    # volumes:
+    #   - ./frontend/:/app
+    #   - /frontend/node_modules:/app/node_modules
+      # - ./:/app
+      # - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      # - MONGO_USER=koitoror
+      # - MONGO_PASSWORD=mypassword
+      # - SESSION_SECRET=secret
+    # entrypoint: ['npm', 'run', 'server']
+    # entrypoint: ['npm', 'run', 'start']
+    # command: npm run server
+    command: npm run start
+
+  mongo:
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=koitoror
+      - MONGO_INITDB_ROOT_PASSWORD=mypassword
