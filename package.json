@@ -12,7 +12,6 @@
     "data:import": "node --experimental-modules backend/seeder.js",
     "data:destroy": "node --experimental-modules backend/seeder.js -d",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
-
   },
   "author": "Daniel Kamar",
   "license": "MIT",
