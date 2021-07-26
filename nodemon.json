@@ -3,5 +3,10 @@
     "ext": "js,json",
     "watchOptions": {
         "followSymlinks": false
-      }
+      },
+    "ignore": [
+      "*.test.js", 
+      "dist/*",
+      "frontend/*"
+    ]
 }

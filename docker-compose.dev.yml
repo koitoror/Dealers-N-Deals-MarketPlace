@@ -40,8 +40,9 @@ services:
       # - /app/node_modules
     environment:
       - NODE_ENV=development
-      # - MONGO_USER=koitoror
-      # - MONGO_PASSWORD=mypassword
+      - MONGO_USER=koitoror
+      - MONGO_PASSWORD=mypassword
+      - MONGO_DB_NAME=admin
       # - SESSION_SECRET=secret
     # entrypoint: ['npm', 'run', 'server']
     # entrypoint: ['npm', 'run', 'start']
@@ -50,5 +51,8 @@ services:
 
   mongo:
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=koitoror
-      - MONGO_INITDB_ROOT_PASSWORD=mypassword
+      # - MONGO_INITDB_ROOT_USERNAME=koitoror
+      # - MONGO_INITDB_ROOT_PASSWORD=mypassword
+      MONGO_INITDB_ROOT_USERNAME: koitoror
+      MONGO_INITDB_ROOT_PASSWORD: mypassword
+      MONGO_INITDB_DATABASE: admin
